@@ -1,0 +1,1 @@
+web: gunicorn newton.wsgi --log-file -

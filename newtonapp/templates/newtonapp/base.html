@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <nav class="white" role="navigation">
+                <div class="nav-wrapper container">
+                  <a id="logo-container" href="#" class="brand-logo">Logo</a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                  </ul>
+            
+                  <ul class="right hide-on-med-and-down">
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                  </ul>
+                
+                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+              </nav>
+              <div class="container">
+                  <div class="section">
+                      <form action = {% url 'login' %} method="post">
+                          {% csrf_token %}
+                          {{form.as_p}}
+                          <button type="Submit"  class="btn-large waves-effect waves-light teal lighten-1">Submit</button>
+                      </form>
+                    </div>
+                    </div>
+            
+    
+</body>
+</html>
